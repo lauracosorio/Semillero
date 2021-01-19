@@ -111,7 +111,7 @@ router.delete("/marca/:id", (req, res) => {
   );
 });
 
-//TIPO LINEA 
+//TIPO LINEA
 
 //Traer todos los datos de tipo_linea
 
@@ -153,11 +153,10 @@ router.post("/linea", async (req, res) => {
       fields,
     ] = await cnn_mysql
       .promise()
-      .execute(`INSERT INTO TIPO_LINEA (DESC_LINEA, ID_MARCA, ACTIVO) VALUES (?,?,?)`, [
-        DESC_LINEA,
-        ID_MARCA,
-        ACTIVO,
-      ]);
+      .execute(
+        `INSERT INTO TIPO_LINEA (DESC_LINEA, ID_MARCA, ACTIVO) VALUES (?,?,?)`,
+        [DESC_LINEA, ID_MARCA, ACTIVO]
+      );
 
     if (rows.affectedRows > 0) {
       res.json({
@@ -168,7 +167,7 @@ router.post("/linea", async (req, res) => {
       });
     } else {
       res.json({
-        message: "Registro ingresado con éxito!"
+        message: "Registro ingresado con éxito!",
       });
     }
   } catch (e) {
@@ -184,9 +183,9 @@ router.post("/linea", async (req, res) => {
 
 router.put("/linea/:id", (req, res) => {
   const { DESC_LINEA, ID_MARCA, ACTIVO } = req.body;
-  const  id  = req.params.id;
+  const id = req.params.id;
 
-  console.log([DESC_LINEA, ID_MARCA, ACTIVO, id])
+  console.log([DESC_LINEA, ID_MARCA, ACTIVO, id]);
 
   cnn_mysql.query(
     `UPDATE TIPO_LINEA SET DESC_LINEA = ?, ID_MARCA = ?, ACTIVO = ? WHERE ID_LINEA = ?`,
@@ -224,5 +223,35 @@ router.delete("/linea/:id", (req, res) => {
   );
 });
 
+//VEHICULO
+
+//Traer todos los datos de vehiculo
+
+router.get("/vehiculo", (req, res) => {
+  cnn_mysql.query("SELECT * FROM VEHICULO", (err, rows, fields) => {
+    if (err) {
+      return res.status(500).send("Se presentó un error en la base de datos");
+    } else {
+      return res.json(resulset);
+    }
+  });
+});
+
+//Traer datos individuales de vehiculo
+router.get("vehiculo/:id", async (req, res) => {
+  const id = req.params.id;
+
+  const [
+    rows,
+  ] = await cnn_mysql
+    .promise()
+    .query("SELECT * FROM VEHICULO WHERE NRO_PLACA = ?", [id]);
+
+  if (rows[0]) {
+    res.json(rows[0]);
+  } else {
+    res.json({});
+  }
+});
 
 module.exports = router;
