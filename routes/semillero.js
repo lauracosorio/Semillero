@@ -368,8 +368,223 @@ router.delete("/vehiculo/:placa", (req, res) => {
 
 //CANTIDADES SOLICITADAS
 
-router.get
+router.get('/cantidad-tipo-marca', (req,res)=> {
+
+  cnn_mysql.query(`SELECT COUNT(*) AS 'CANTIDAD TIPO MARCA' FROM TIPO_MARCA`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+router.get('/cantidad-tipo-linea', (req,res)=> {
+
+  cnn_mysql.query(`SELECT COUNT(*) AS 'CANTIDAD TIPO LINEA' FROM TIPO_LINEA`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+router.get('/cantidad-vehiculos', (req,res)=> {
+
+  cnn_mysql.query(`SELECT COUNT(*) AS 'CANTIDAD VEHICULOS' FROM VEHICULOS`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
 
 //MODELO MÁXIMO Y MÍNIMO
+
+router.get('/modelo-max-min', (req,res)=> {
+
+  cnn_mysql.query(`SELECT MAX(MODELO) AS 'MODELO MÁXIMO', MIN(MODELO) AS 'MODELO MÍNIMO' FROM VEHICULOS`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//Se debe generar una consulta que contenga DESC_MARCA, DESC_LINEA y cantidad, para saber cuántas líneas repetidas por marca están almacenadas. (Crear un servicio en Express que devuelva dicha información).
+
+router.get('/cantidad-marca', (req,res)=> {
+
+  cnn_mysql.query(`SELECT DESC_MARCA, DESC_LINEA, TM.ID_MARCA, COUNT(*) CANTIDAD FROM TIPO_MARCA TM, TIPO_LINEA TL WHERE TM.ID_MARCA = TL.ID_MARCA GROUP BY TM.ID_MARCA`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//RANGO DE FECHA
+
+router.get('/fecha-ven-seguro', (req,res)=> {
+
+  cnn_mysql.query(`SELECT * FROM VEHICULOS WHERE FECHA_VEN_SEGURO >= '2015-01-01' AND FECHA_VEN_SEGURO <= '2019-01-01'`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//RANGO MODELO
+router.get('/modelos', (req,res)=> {
+
+  cnn_mysql.query(`SELECT * FROM VEHICULOS WHERE MODELO >= '2018' AND MODELO <= '2021'`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//Crear una consulta única que tenga las siguientes columnas: NRO_PLACA, MODELO, DESC_LINEA, DESC_MARCA, traer todos los registros que coincidan en todas las tablas.
+
+router.get('/datos', (req,res)=> {
+
+  cnn_mysql.query(`SELECT NRO_PLACA, MODELO, DESC_MARCA, DESC_LINEA, TL.ACTIVO, TM.ACTIVO FROM VEHICULOS V, TIPO_MARCA TM, TIPO_LINEA TL WHERE TM.ID_MARCA=TL.ID_MARCA AND TL.ID_LINEA=V.ID_LINEA`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//Crear una consulta única que tenga las siguientes columnas: NRO_PLACA, MODELO, DESC_LINEA, DESC_MARCA; traer todos los registros que coincidan en todas las tablas y que se encuentren en estado S. (Crear un servicio en Express).
+
+router.get('/datos-estado-s', (req,res)=> {
+
+  cnn_mysql.query(`SELECT NRO_PLACA, MODELO, DESC_MARCA, DESC_LINEA, TL.ACTIVO 'TIPO LINEA ACTIVO', TM.ACTIVO 'TIPO MARCA ACTIVO' FROM VEHICULOS V, TIPO_MARCA TM, TIPO_LINEA TL WHERE TM.ID_MARCA=TL.ID_MARCA AND TL.ID_LINEA=V.ID_LINEA AND TL.ACTIVO='S' AND TM.ACTIVO='S'`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//SUMA MODELOS
+
+router.get('/suma-modelos', (req,res)=> {
+
+  cnn_mysql.query(`SELECT SUM(IFNULL(MODELO,0)) 'SUMA MODELOS' FROM VEHICULOS`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//PROMEDIO MODELOS 
+
+router.get('/promedio-modelos', (req,res)=> {
+
+  cnn_mysql.query(`SELECT AVG(IFNULL(MODELO,0)) 'PROMEDIO MODELOS' FROM VEHICULOS`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//REGISTROS ACTIVOS E INACTIVOS
+
+router.get('/registros', (req,res)=> {
+
+  cnn_mysql.query(`SELECT SUM(IF(ACTIVO='S',1,0)) 'ACTIVO', SUM(IF(ACTIVOS='N',1,0)) 'INACTIVOS' FROM TIPO_LINEA`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//TIPO LINEA 
+
+router.get('/tipo-linea', (req,res)=> {
+
+  cnn_mysql.query(`SELECT * FROM TIPO_LINEA WHERE DESC_LINEA IS NOT NULL AND ID_MARCA IS NOT NULL and ACTIVO IS NOT NULL`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//TIPO MARCA
+router.get('/tipo-marca', (req,res)=> {
+
+  cnn_mysql.query(`SELECT ID_MARCA, DESC_MARCA, IF(ACTIVO='S','ACTIVO','INACTIVO') AS 'ACTIVO' FROM TIPO_MARCA WHERE ACTIVO IS NOT NULL`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//VEHICULO
+
+router.get('/vehiculos', (req,res)=> {
+
+  cnn_mysql.query(`SELECT NRO_PLACA,ID_LINEA,MODELO '#ModeloVehiculo: ',
+  DATE_FORMAT(FECHA_VEN_SEGURO, '%d/%m/%Y') 'FECHA VENCIMIENTO SEGURO',
+  DATE_FORMAT(FECHA_VEN_TECNOMECANICA, '%d/%m/%Y') 'FECHA VENCIMIENTO TECNOMECANICA',
+  DATE_FORMAT(FECHA_VEN_CONTRATO, '%d/%m/%Y') 'FECHA VENCIMIENTO CONTRATO' FROM VEHICULOS WHERE ID_LINEA IS NOT NULL AND MODELO IS NOT NULL`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
+
+//INNER JOIN LEFT JOIN
+
+router.get('/join', (req,res)=> {
+
+  cnn_mysql.query(`SELECT NRO_PLACA, MODELO, DESC_LINEA, DESC_MARCA FROM VEHICULOS V INNER JOIN TIPO_LINEA TL ON V.ID_LINEA=TL.ID_LINEA LEFT JOIN TIPO_MARCA TM ON TL.ID_MARCA = TM.ID_MARCA`, (err,resulset,fields)=>{
+    if(err){
+      console.log(err)
+      return res.status(500).send('No se pudo realizar la consulta')
+    }else{
+      return res.json(resulset)
+    }
+  })
+})
 
 module.exports = router;
