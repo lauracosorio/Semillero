@@ -16,8 +16,8 @@ app.use(express.json());
 //Routes
 
 app.use('/semillero', tipo_marca)
-// app.use('/semillero', vehiculos)
-// app.use('/semillero', tipo_linea)
+app.use('/semillero', vehiculos)
+app.use('/semillero', tipo_linea)
 
 app.get('/',(req,res)=>{
     res.send('<h1>Semillero</h1>')
