@@ -1,0 +1,1163 @@
+{
+	"info": {
+		"_postman_id": "ce8ab57d-3a2a-4dbd-8f6f-c904bb21b4bd",
+		"name": "SEMILLERO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "marca",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/semillero/marca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"marca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "marca individual",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/semillero/marca/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"marca",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "marca post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DESC_MARCA\": \"Toyota\",\r\n    \"ACTIVO\": \"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/marca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"marca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "marca delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DESC_MARCA\": \"Toyota\",\r\n    \"ACTIVO\": \"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/marca/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"marca",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "revision de borrado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DESC_MARCA\": \"Toyota\",\r\n    \"ACTIVO\": \"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/marca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"marca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "linea",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DESC_MARCA\": \"Toyota\",\r\n    \"ACTIVO\": \"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/linea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"linea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "linea individual",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DESC_MARCA\": \"Toyota\",\r\n    \"ACTIVO\": \"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/linea/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"linea",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "linea delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DESC_MARCA\": \"Toyota\",\r\n    \"ACTIVO\": \"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/linea/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"linea",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "linea post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"DESC_LINEA\": \"fgd\",\r\n        \"ID_MARCA\": 5,\r\n        \"ACTIVO\": \"n\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/linea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"linea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "revision post linea",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"DESC_LINEA\": \"fgd\",\r\n        \"ID_MARCA\": 5,\r\n        \"ACTIVO\": \"n\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/linea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"linea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete linea",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"DESC_LINEA\": \"fgd\",\r\n        \"ID_MARCA\": 5,\r\n        \"ACTIVO\": \"n\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/linea/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"linea",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehiculo grupal",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"DESC_LINEA\": \"fgd\",\r\n        \"ID_MARCA\": 5,\r\n        \"ACTIVO\": \"n\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/vehiculo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"vehiculo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehiculo individual",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"DESC_LINEA\": \"fgd\",\r\n        \"ID_MARCA\": 5,\r\n        \"ACTIVO\": \"n\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/vehiculo/JJH123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"vehiculo",
+						"JJH123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehiculo POST ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/vehiculo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"vehiculo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REVISION POST VEHICULO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/vehiculo/BGF543",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"vehiculo",
+						"BGF543"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete VEHICULO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/vehiculo/BGF543",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"vehiculo",
+						"BGF543"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "revision delete vehiculo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/vehiculo/BGF543",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"vehiculo",
+						"BGF543"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cantidad-tipo-marca",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/cantidad-tipo-marca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"cantidad-tipo-marca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cantidad-tipo-linea",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/cantidad-tipo-linea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"cantidad-tipo-linea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cantidad-vehiculos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/cantidad-vehiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"cantidad-vehiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modelo-max-min",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/modelo-max-min",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"modelo-max-min"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cantidad-marca",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/cantidad-marca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"cantidad-marca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fecha-ven-seguro",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/fecha-ven-seguro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"fecha-ven-seguro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modelos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/modelos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"modelos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "datos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/datos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"datos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "datos-estado-s",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/datos-estado-s",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"datos-estado-s"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suma-modelos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/suma-modelos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"suma-modelos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "promedio-modelos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/promedio-modelos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"promedio-modelos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registros",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/registros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"registros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tipo-linea",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/tipo-linea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"tipo-linea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tipo-marca",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/tipo-marca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"tipo-marca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehiculos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/vehiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"vehiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inner join",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/inner-join",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"inner-join"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "left join",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NRO_PLACA\": \"BGF543\",\r\n        \"ID_LINEA\": 1,\r\n        \"MODELO\": \"2015\",\r\n        \"FECHA_VEN_SEGURO\": \"2022-05-12\",\r\n        \"FECHA_VEN_TECNOMECANICA\": \"2022-05-12\",\r\n        \"FECHA_VEN_CONTRATO\": \"2022-05-12\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/semillero/left-join",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"semillero",
+						"left-join"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HEROKU",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"DESC_MARCA\": \"TOYOTA\",\r\n        \"ACTIVO\": \"N\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://semillero-app.herokuapp.com/semillero/marca",
+					"protocol": "https",
+					"host": [
+						"semillero-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"semillero",
+						"marca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HEROKU PRUEBA 2",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"DESC_MARCA\": \"TOYOTA\",\r\n        \"ACTIVO\": \"N\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://semillero-app.herokuapp.com/semillero/marca/8",
+					"protocol": "https",
+					"host": [
+						"semillero-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"semillero",
+						"marca",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HEROKU PRUEBA 3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"DESC_MARCA\": \"TOYOTA\",\r\n        \"ACTIVO\": \"N\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://semillero-app.herokuapp.com/semillero/marca/8",
+					"protocol": "https",
+					"host": [
+						"semillero-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"semillero",
+						"marca",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
