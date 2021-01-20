@@ -150,7 +150,7 @@ router.get("/vehiculo", (req, res) => {
 
    router.get('/cantidad-vehiculos', (req,res)=> {
   
-    cnn_mysql.query(`SELECT COUNT(*) AS 'CANTIDAD VEHICULOS' FROM VEHICULOS`, (err,resulset,fields)=>{
+    cnn_mysql.query(`SELECT COUNT(*) AS 'CANTIDAD VEHICULOS', IF(COUNT(*)=30, 'CUMPLE CON LA CANTIDAD SOLICITADA', 'NO CUMPLE CON LA CANTIDAD SOLICITADA') 'CUMPLE/NO CUMPLE' FROM VEHICULOS`, (err,resulset,fields)=>{
       if(err){
         console.log(err)
         return res.status(500).send('No se pudo realizar la consulta')
@@ -177,11 +177,25 @@ router.get('/vehiculos', (req,res)=> {
     })
   })
   
-  //INNER JOIN LEFT JOIN
+  //INNER JOIN 
   
-  router.get('/join', (req,res)=> {
+  router.get('/inner-join', (req,res)=> {
   
-    cnn_mysql.query(`SELECT NRO_PLACA, MODELO, DESC_LINEA, DESC_MARCA FROM VEHICULOS V INNER JOIN TIPO_LINEA TL ON V.ID_LINEA=TL.ID_LINEA LEFT JOIN TIPO_MARCA TM ON TL.ID_MARCA = TM.ID_MARCA`, (err,resulset,fields)=>{
+    cnn_mysql.query(`SELECT NRO_PLACA, MODELO, DESC_LINEA, DESC_MARCA FROM VEHICULOS V INNER JOIN TIPO_LINEA TL ON V.ID_LINEA=TL.ID_LINEA INNER JOIN TIPO_MARCA TM ON TL.ID_MARCA = TM.ID_MARCA`, (err,resulset,fields)=>{
+      if(err){
+        console.log(err)
+        return res.status(500).send('No se pudo realizar la consulta')
+      }else{
+        return res.json(resulset)
+      }
+    })
+  })
+
+  //LEFT JOIN 
+  
+  router.get('/left-join', (req,res)=> {
+  
+    cnn_mysql.query(`SELECT NRO_PLACA, MODELO, DESC_LINEA, DESC_MARCA FROM VEHICULOS V LEFT JOIN TIPO_LINEA TL ON V.ID_LINEA=TL.ID_LINEA LEFT JOIN TIPO_MARCA TM ON TL.ID_MARCA = TM.ID_MARCA`, (err,resulset,fields)=>{
       if(err){
         console.log(err)
         return res.status(500).send('No se pudo realizar la consulta')
@@ -232,5 +246,5 @@ router.get('/datos', (req,res)=> {
       }
     })
   })
-  
+
   module.exports = router;

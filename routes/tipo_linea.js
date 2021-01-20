@@ -116,7 +116,7 @@ router.get("/linea", (req, res) => {
 
   router.get('/cantidad-tipo-linea', (req,res)=> {
   
-    cnn_mysql.query(`SELECT COUNT(*) AS 'CANTIDAD TIPO LINEA' FROM TIPO_LINEA`, (err,resulset,fields)=>{
+    cnn_mysql.query(`SELECT COUNT(*) AS 'CANTIDAD TIPO LINEA', IF(COUNT(*)=20, 'CUMPLE CON LA CANTIDAD SOLICITADA', 'NO CUMPLE CON LA CANTIDAD SOLICITADA') 'CUMPLE/NO CUMPLE' FROM TIPO_LINEA`, (err,resulset,fields)=>{
       if(err){
         console.log(err)
         return res.status(500).send('No se pudo realizar la consulta')

@@ -116,7 +116,7 @@ router.delete("/marca/:id", (req, res) => {
 
  router.get('/cantidad-tipo-marca', (req,res)=> {
 
-  cnn_mysql.query(`SELECT COUNT(*) AS 'CANTIDAD TIPO MARCA' FROM TIPO_MARCA`, (err,resulset,fields)=>{
+  cnn_mysql.query(`SELECT COUNT(*) 'CANTIDAD TIPO MARCA', IF(COUNT(*)=5, 'CUMPLE CON LA CANTIDAD SOLICITADA', 'NO CUMPLE CON LA CANTIDAD SOLICITADA') AS 'CUMPLE/NO CUMPLE' FROM TIPO_MARCA`, (err,resulset,fields)=>{
     if(err){
       console.log(err)
       return res.status(500).send('No se pudo realizar la consulta')
@@ -209,8 +209,5 @@ router.get('/promedio-modelos', (req,res)=> {
     }
   })
 })
-
-
-
 
 module.exports = router;
